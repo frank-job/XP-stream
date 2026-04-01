@@ -1,0 +1,447 @@
+
+:root {
+    --primary-color: #ff0000;
+    --bg-color: #141414;
+    --sidebar-bg: #000000;
+    --text-color: #ffffff;
+    --text-muted: #888888;
+    
+    /* Consistency for widths */
+    --sb-collapsed: 70px;
+    --sb-expanded: 240px;
+    --transition: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Corbel', sans-serif;
+    display: flex;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. MAIN LAYOUT
+   ========================================= */
+main {
+    /* Main content stays pushed by the small sidebar width */
+    margin-left: var(--sb-collapsed);
+    width: calc(100% - var(--sb-collapsed));
+    padding: 30px;
+    transition: margin-left var(--transition);
+    min-height: 100vh;
+}
+
+/* =========================================
+   3. SIDEBAR (Fixed to Left)
+   ========================================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--sb-collapsed);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: width var(--transition);
+    overflow-x: hidden;
+   
+}
+
+.sidebar:hover {
+    width: var(--sb-expanded);
+}
+
+/* Logo Area */
+.logo {
+    padding: 20px;
+    font-family: 'Algeria', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+/* Sidebar Navigation Groups */
+.nav-group ul {
+    list-style: none;
+}
+
+.nav-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #444;
+    padding: 20px 0 5px 25px;
+    font-weight: bold;
+    display: none; /* Only show on hover */
+}
+
+.sidebar:hover .nav-label {
+    display: block;
+}
+
+.nav-group li a, .sidebar-footer a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.nav-group li a i, .sidebar-footer a i {
+    min-width: 30px;
+    font-size: 1.2rem;
+}
+
+.nav-text {
+    margin-left: 15px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.sidebar:hover .nav-text {
+    opacity: 1;
+}
+
+.nav-group li a:hover, 
+.nav-group li a.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-group li a.active {
+    border-left: 3px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.sidebar-footer {
+    border-top: 1px solid #222;
+    padding: 10px 0;
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centering content */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    max-width: 800px;
+}
+
+/* Text Shine Animation */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #fff 0%, #ff0000 50%, #fff 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textShine 3s linear infinite;
+}
+
+@keyframes textShine {
+    to { background-position: 200% center; }
+}
+
+/* src/css/style.css */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* Very transparent */
+    backdrop-filter: blur(15px); /* Frosty glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 8px 25px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Glowing effect when typing */
+.search-box:focus-within {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px;
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+.search-box button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-box button:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+.no-results, .loader {
+    grid-column: 1 / -1; /* Spans the whole grid */
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5rem;
+    color: #555;
+    font-style: italic;
+}
+
+.loader {
+    color: var(--primary-color);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: 0.5; }
+}
+
+
+/* Movie Grid Layout */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Individual Movie Card */
+.movie-card {
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Cuts off long titles with ... */
+}
+
+.rating {
+    color: #ffcc00;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+
+/* =========================================
+   6. RESPONSIVE DESIGN (MOBILE FIX)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Change Sidebar to Bottom Navigation */
+    .sidebar {
+        width: 100% !important;
+        height: 65px !important;
+        bottom: 0;
+        top: auto; /* Moves it from top to bottom */
+        flex-direction: row; /* Icons sit side-by-side */
+        justify-content: space-around;
+        padding: 0;
+        border-right: none;
+        border-top: 1px solid #222;
+    }
+
+    /* Hide the Logo and Labels on Mobile to save space */
+    .logo, .nav-label, .sidebar-footer {
+        display: none !important;
+    }
+
+    /* Make the Nav Group take full width */
+    .sidebar-content, .nav-group, .nav-group ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+
+    /* Style the Mobile Icons */
+    .nav-group li a {
+        padding: 10px;
+        flex-direction: column; /* Icon on top of text (if you want text) */
+        border-left: none !important; /* Remove the desktop active bar */
+    }
+
+    /* Hide text labels entirely on mobile for a cleaner look */
+    .nav-text {
+        display: none !important;
+    }
+
+    /* 2. Fix the Main Content Margin */
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        margin-bottom: 70px; /* Space for the bottom bar */
+        padding: 15px;
+    }
+
+    /* 3. Adjust the Hero Section for Mobile */
+    .hero-section {
+        height: 50vh; /* Shorter on mobile */
+        border-radius: 0; /* Full width looks better on mobile */
+        margin: -15px -15px 20px -15px; /* Pulls to edges */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller text */
+    }
+
+    .hero-content h1 span {
+        font-size: 2.2rem; /* Smaller XP-Stream shine */
+    }
+
+    /* 4. Shrink the Search Box */
+    .search-box {
+        max-width: 90%;
+        padding: 5px 15px;
+    }
+
+    .search-box input {
+        font-size: 0.9rem;
+    }
+
+    /* 5. Make Movie Grid 2 columns instead of squeezing */
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+/* =========================================
+   MOBILE FIX (Force Sidebar to Bottom)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Force the sidebar to the bottom */
+    .sidebar {
+        position: fixed !important; /* Critical: Keeps it stuck to the bottom */
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 65px !important; /* Slightly taller for thumb-friendly tapping */
+        top: auto !important;
+        flex-direction: row !important;
+        background: #000 !important;
+        border-top: 1px solid #333 !important;
+        z-index: 9999 !important; /* Ensure it stays above the movie content */
+        display: flex !important; /* Ensure flexbox is active */
+    }
+
+    /* 2. Hide non-essential labels for a clean icon-only look */
+    .logo, .nav-label, .sidebar-footer, .nav-text {
+        display: none !important;
+    }
+
+    /* 3. Space icons evenly across the bottom bar */
+    .sidebar-content, .nav-group, .nav-group ul {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        height: 100% !important;
+        justify-content: space-around !important; /* Even spacing */
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    /* 4. Adjust the main content so it isn't hidden by the bar */
+    main {
+        margin-left: 0 !important;
+        margin-bottom: 80px !important; /* Adds padding at the bottom of the page */
+        width: 100% !important;
+    }
+
+    /* 5. Movie Grid - 2 columns is perfect for mobile */
+    .movie-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 10px !important;
+    }
+}

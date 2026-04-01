@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>XP-Streams | Home</title>
+    
+    <meta name="description"
+        content="Eco Tourism is a sustainable travel initiative promoting responsible tourism practices and environmental conservation.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <meta name="author" content="Frank Yakan">
+    <!-- <link rel="icon" href="images/favicon.ico"> -->
+     <link rel="icon" href="/src/images/favicon.ico">
+
+     <!-- Primary Meta Tags -->
+<title>XP-Stream | Jinja's Movie Discovery App</title>
+<meta name="title" content="XP-Stream | Jinja's Movie Discovery App" />
+<meta name="description" content="Explore the latest trending movies, search for your favorites, and create your ultimate watchlist with XP-Stream." />
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://crispus-253.github.io/XP-stream/" /> <!-- Update this with your actual URL later -->
+<meta property="og:title" content="XP-Stream | Jinja's Movie Discovery App" />
+<meta property="og:description" content="Discover, explore, and save the best movies across the globe. Modern cinematic experience powered by TMDb." />
+<meta property="og:image" content="https://crispus-253.github.io/XP-stream/src/assets/social-preview.jpg" />
+
+<!-- Twitter / X -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://crispus-253.github.io/XP-stream/" />
+<meta property="twitter:title" content="XP-Stream | Jinja's Movie Discovery App" />
+<meta property="twitter:description" content="Discover, explore, and save the best movies across the globe. Modern cinematic experience powered by TMDb." />
+<meta property="twitter:image" content="https://crispus-253.github.io/XP-stream/src/assets/social-preview.jpg" />
+</head>
+<body>
+    
+    <!-- Sidebar is injected here by main.js -->
+
+    <main>
+        <!-- HERO SECTION -->
+      <section class="hero-section">
+    <!-- 1. The actual image sitting in HTML -->
+    <img src="/src/images/movie banners.jpg" alt="Featured Movie" class="hero-img">
+    
+    <!-- 2. Dark overlay so white text is readable -->
+    <div class="hero-overlay"></div>
+
+    <!-- 3. Your content sitting on top -->
+    <div class="hero-content">
+        <h1>Watch the Best Movies on <span>XP-Stream</span></h1>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-btn"><i class="fa-solid fa-search"></i></button>
+        </div>
+    </div>
+</section>
+
+        <!-- MOVIE GRIDS -->
+        <section class="movie-section">
+            <h2>Trending Now</h2>
+            <div class="movie-grid" id="trending-grid"></div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
