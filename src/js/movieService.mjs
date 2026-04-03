@@ -1,4 +1,4 @@
-// src/js/movieService.mjs
+
 const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d'; // Put your key here
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -13,12 +13,12 @@ export async function getTrendingMovies() {
     }
 }
 
-// Helper to build the full image path
+
 export function getImageUrl(path) {
     return path ? `${IMG_URL}${path}` : 'https://via.placeholder.com/500x750?text=No+Image';
 }
 
-// Add this to your existing movieService.mjs
+
 export async function searchMovies(query) {
     const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d';
     const BASE_URL = 'https://api.themoviedb.org/3';
@@ -29,5 +29,30 @@ export async function searchMovies(query) {
         return data.results;
     } catch (error) {
         console.error("Search failed:", error);
+    }
+}
+
+export async function getMovieDetails(movieId) {
+    try {
+        const response = await fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching movie details:", error);
+    }
+}
+
+
+
+export async function getMoviesByGenre(genreId) {
+    const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d';
+    const BASE_URL = 'https://api.themoviedb.org/3';
+    
+    try {
+        const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}`);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error("Error fetching genre movies:", error);
     }
 }

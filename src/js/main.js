@@ -1,25 +1,31 @@
-
-import { sidebarTemplate } from './utils.mjs';
+import { sidebarTemplate, mobileBottomBar } from './utils.mjs';
 import { getTrendingMovies, searchMovies, getImageUrl } from './movieService.mjs';
 
-// 1. Inject Sidebar
-document.body.insertAdjacentHTML("afterbegin", sidebarTemplate);
 
-// 2. Reference the HTML elements
+
+document.body.insertAdjacentHTML("afterbegin", sidebarTemplate);
+document.body.insertAdjacentHTML("beforeend", mobileBottomBar);
+
+
 const movieGrid = document.querySelector('#trending-grid');
 const sectionTitle = document.querySelector('.movie-section h2');
 const searchInput = document.querySelector('#search-input');
 const searchBtn = document.querySelector('#search-btn');
 
-// 3. Reusable Function to Render Cards
+
+const menuBtn = document.querySelector('#menu-btn');
+const sidebar = document.querySelector('.sidebar');
+
 function displayMovies(movies) {
+    if (!movieGrid) return; 
+    
     if (movies.length === 0) {
         movieGrid.innerHTML = `<p class="no-results">No movies found. Try another title!</p>`;
         return;
     }
     
     movieGrid.innerHTML = movies.map(movie => `
-        <div class="movie-card">
+        <div class="movie-card" data-id="${movie.id}">
             <img src="${getImageUrl(movie.poster_path)}" alt="${movie.title}" loading="lazy">
             <div class="movie-info">
                 <h3>${movie.title}</h3>
@@ -29,30 +35,47 @@ function displayMovies(movies) {
     `).join('');
 }
 
-// 4. Search Handler
 async function handleSearch() {
     const query = searchInput.value;
     if (query.trim() === "") return;
 
-    sectionTitle.innerText = `Results for: "${query}"`;
-    movieGrid.innerHTML = `<div class="loader">Searching...</div>`; // Cool feedback
+    if (sectionTitle) sectionTitle.innerText = `Results for: "${query}"`;
+    movieGrid.innerHTML = `<div class="loader">Searching...</div>`;
 
     const results = await searchMovies(query);
     displayMovies(results);
 }
 
-// 5. Event Listeners
-searchBtn.addEventListener('click', handleSearch);
 
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        handleSearch();
+
+if (searchBtn) {
+    searchBtn.addEventListener('click', handleSearch);
+}
+
+if (searchInput) {
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleSearch();
+    });
+}
+
+
+if (menuBtn && sidebar) {
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); 
+        sidebar.classList.toggle('mobile-open');
+    });
+}
+
+document.addEventListener('click', (e) => {
+    if (sidebar && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+        sidebar.classList.remove('mobile-open');
     }
 });
 
-// 6. Initial Load (Trending Movies)
 async function init() {
+    console.log("App initializing...");
     const trending = await getTrendingMovies();
+    console.log("Trending movies fetched:", trending);
     displayMovies(trending);
 }
 
