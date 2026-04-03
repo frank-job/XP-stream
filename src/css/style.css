@@ -53,10 +53,12 @@ main {
 }
 
 .sidebar-icon {
-    width: 24px;
-    height: 24px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
     min-width: 24px;
+    border-radius: 20px;
+    
 }
 
 
@@ -91,7 +93,13 @@ main {
     color: var(--primary-color);
     white-space: nowrap;
 }
-
+.logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+    filter: invert(1);
+}
 
 .nav-group ul {
     list-style: none;
@@ -419,7 +427,7 @@ main {
 
 
     .movie-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
 }
@@ -438,6 +446,7 @@ main {
         transition: left 0.4s ease !important;
         background: rgba(0, 0, 0, 0.95) !important;
         backdrop-filter: blur(10px);
+        box-shadow: 10px 0 40px rgba(0, 0, 0, 0.9);
     }
 
 
@@ -465,6 +474,32 @@ main {
         border-top: 1px solid #333;
         z-index: 2000;
         padding: 0 10px;
+        font-size: 10px;
+       
+       
+    }
+     .mobile-bottom-bar img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        filter: invert(1);
+        font-size: 25px;
+     }
+    .mobile-bottom-bar a {
+        color: var(--text-muted);
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8rem;
+        
+    }
+    .nav-text {
+        font-size: 0.7rem;
+        margin-top: 4px;
+        
+        font-size: 15px;
+       
     }
 
     .nav-item {
@@ -475,7 +510,7 @@ main {
         font-size: 0.7rem;
         text-decoration: none;
     }
-
+    
     .nav-item i {
         font-size: 1.4rem;
         margin-bottom: 4px;

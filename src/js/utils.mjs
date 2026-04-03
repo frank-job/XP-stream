@@ -5,7 +5,7 @@ export function renderWithTemplate(template, parentElement) {
 export const sidebarTemplate = `
 <aside class="sidebar">
     <div class="logo">
-        <img src="/images/video.png" alt="Logo" class="sidebar-icon"> 
+        <img src="/images/logoo.PNG" alt="Logo" class="sidebar-icon"> 
         <span class="nav-text">XP-<span>Stream</span></span>
     </div>
 
@@ -13,18 +13,18 @@ export const sidebarTemplate = `
         <div class="nav-group">
             <p class="nav-label nav-text">Menu</p>
             <ul>
-                <li><a href="/" class="active"><img src="/images/home.png" alt="Home" class="sidebar-icon"> <span class="nav-text">Home</span></a></li>
-                <li><a href="#"><img src="/images/trend.png" alt="Trending" class="sidebar-icon"> <span class="nav-text">Trending</span></a></li>
-                <li><a href="#"><img src="/images/cinema.png" alt="Movies" class="sidebar-icon"> <span class="nav-text">Movies</span></a></li>
+                <li><a href="/" class="active"><img src="/images/homebutton .png" alt="Home" class="sidebar-icon"> <span class="nav-text">Home</span></a></li>
+                <li><a href="#"><img src="/images/movie.png" alt="Trending" class="sidebar-icon"> <span class="nav-text">Trending</span></a></li>
+                <li><a href="#"><img src="/images/videoplay.png" alt="Movies" class="sidebar-icon"> <span class="nav-text">Movies</span></a></li>
             </ul>
         </div>
 
         <div class="nav-group">
             <p class="nav-label nav-text">Categories</p>
             <ul>
-                <li><a href="#"><img src="/images/action.png" alt="Action" class="sidebar-icon"> <span class="nav-text">Action</span></a></li>
-                <li><a href="/genres/horror/"><img src="/images/ghost.png" class="sidebar-icon"> <span class="nav-text">Horror</span></a></li>
-                <li><a href="/genres/comedy/"><img src="/images/action-movie.png" class="sidebar-icon"> <span class="nav-text">Comedy</span></a></li>
+                <li><a href="#"><img src="/images/revolver.png" alt="Action" class="sidebar-icon"> <span class="nav-text">Action</span></a></li>
+                <li><a href="/genres/horror/"><img src="/images/horror.png" class="sidebar-icon"> <span class="nav-text">Horror</span></a></li>
+                <li><a href="/genres/comedy/"><img src="/images/comed.png" class="sidebar-icon"> <span class="nav-text">Comedy</span></a></li>
             </ul>
         </div>
 
@@ -32,7 +32,7 @@ export const sidebarTemplate = `
             <p class="nav-label nav-text">General</p>
             <ul>
                 <li><a href="#"><img src="/images/download.png" alt="Downloads" class="sidebar-icon"> <span class="nav-text">Downloads</span></a></li>
-                <li><a href="#"><img src="/images/send.png" alt="Share" class="sidebar-icon"> <span class="nav-text">Share App</span></a></li>
+                <li><a href="#"><img src="/images/send .png" alt="Share" class="sidebar-icon"> <span class="nav-text">Share App</span></a></li>
                 <li><a href="#"><img src="/images/user.png" alt="Settings" class="sidebar-icon"> <span class="nav-text">Settings</span></a></li>
             </ul>
         </div>
@@ -47,10 +47,10 @@ export const sidebarTemplate = `
 
 export const mobileBottomBar = `
 <div class="mobile-bottom-bar">
-    <a href="/" class="nav-item active"><img src="/src/images/home.png" class="sidebar-icon"></a>
-    <a href="#" class="nav-item"><img src="/src/images/trend.png" class="sidebar-icon"></a>
-    <a href="#" class="nav-item"><img src="/src/images/cinema.png" class="sidebar-icon"></a>
-    <div id="menu-btn" class="nav-item"><i class="fa-solid fa-bars"></i><span>Menu</span></div>
+    <a href="index.html" class="active"><img src="/images/homebutton .png" alt="Home" class="sidebar-icon"> <span class="nav-text">Home</span></a>
+    
+    <a href="#" class="nav-item"><img src="/images/play.png" alt="Movies" class="sidebar-icon"> <span class="nav-text">Movies</span></a>
+    <div id="menu-btn" class="nav-item"><img src="/images/menu.png" alt="Menu" class="sidebar-icon"> <span class="nav-text">More</span></div>
 </div>`;
 
 
