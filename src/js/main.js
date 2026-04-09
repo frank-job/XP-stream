@@ -59,18 +59,7 @@ if (searchInput) {
 }
 
 
-if (menuBtn && sidebar) {
-    menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); 
-        sidebar.classList.toggle('mobile-open');
-    });
-}
 
-document.addEventListener('click', (e) => {
-    if (sidebar && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
-        sidebar.classList.remove('mobile-open');
-    }
-});
 
 async function init() {
     console.log("App initializing...");
@@ -80,3 +69,30 @@ async function init() {
 }
 
 init();
+
+
+
+
+
+
+
+const menBtn = document.getElementById('menu-btn');
+
+menuBtn.addEventListener('click', () => {
+    // Check if the screen width is mobile size
+    if (window.innerWidth <= 768) {
+        // Redirect to your "More" page
+        window.location.href = '/more/index.html';
+    } else {
+        // Optional: What happens on Desktop? 
+        // Maybe show a sidebar or an alert
+        alert("Menu is available on mobile only!");
+    }
+});
+
+
+
+
+
+
+

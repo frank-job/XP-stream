@@ -58,9 +58,12 @@ main {
     object-fit: contain;
     min-width: 24px;
     border-radius: 20px;
+    font-size: 8.2rem;
     
 }
-
+.nav-label:hover {
+    color: var(--primary-color);
+}
 
 .sidebar-icon {
     filter: invert(1);
@@ -246,13 +249,19 @@ main {
     border-color: var(--primary-color);
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
     transform: translateY(-2px);
+   
+}
+
+
+.search-bar input {
+    caret-color: #E50914;
 }
 
 .search-box input {
     background: transparent;
     border: none;
     outline: none;
-    color: #fff;
+    /* color: #fff; */
     font-size: 1.1rem;
     padding: 10px;
     width: 100%;
@@ -265,7 +274,7 @@ main {
 .search-box button {
     background: transparent;
     border: none;
-    color: #fff;
+    /* color: #fff; */
     font-size: 1.2rem;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -320,12 +329,19 @@ main {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     z-index: 10;
+    
 }
 
 .movie-card img {
     width: 100%;
     height: auto;
     display: block;
+}
+.movie-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(118, 100, 100, 0.5);
+    z-index: 10;
+    font-size: 25px;
 }
 
 .movie-info {
@@ -346,6 +362,23 @@ main {
     font-weight: bold;
 }
 
+.section-title {
+    font-size: 2.5rem;
+    margin-top: 10px;   
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--primary-color);
+}
+.section-title span {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #fff 0%, #ff0000 50%, black 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textShine 3s linear infinite;
+}
 
 
 @media (max-width: 768px) {
@@ -406,7 +439,9 @@ main {
         border-radius: 0;
         margin: -15px -15px 20px -15px;
     }
-
+    .hero-img {
+        width: 100%;
+    }
     .hero-content h1 {
         font-size: 1.8rem;
     }
@@ -424,7 +459,7 @@ main {
     .search-box input {
         font-size: 0.9rem;
     }
-
+    
 
     .movie-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -527,10 +562,18 @@ main {
         margin-bottom: 80px;
     }
 
+    .section-title {
+        font-size: 20px;
+      
+    }
+
     .hero-section {
         height: 40vh !important;
         border-radius: 0;
     }
+
+
+    
 }
 
 
@@ -552,3 +595,28 @@ main {
 
     margin-left: 10px;
 }
+
+
+
+
+/* Hide the bottom bar by default (Desktop) */
+.mobile-bottom-bar {
+    display: none;
+}
+
+/* Show the bottom bar only on screens smaller than 768px (Phones/Tablets) */
+@media (max-width: 768px) {
+    .mobile-bottom-bar {
+        display: flex; /* Or whatever layout you used */
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #111;
+        justify-content: space-around;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+}
+
+
+
