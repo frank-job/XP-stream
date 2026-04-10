@@ -1,5 +1,5 @@
 
-const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d'; // Put your key here
+const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d'; 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -56,3 +56,26 @@ export async function getMoviesByGenre(genreId) {
         console.error("Error fetching genre movies:", error);
     }
 }
+
+
+
+
+
+
+export async function getTrailerKey(id, type = 'movie') {
+    try {
+        const url = `${BASE_URL}/${type}/${id}/videos?api_key=${API_KEY}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        // Find a Trailer on YouTube
+        const trailer = data.results.find(vid => vid.type === 'Trailer' && vid.site === 'YouTube');
+        return trailer ? trailer.key : null;
+    } catch (error) {
+        console.error("Error fetching trailer:", error);
+        return null;
+    }
+}
+
+
+

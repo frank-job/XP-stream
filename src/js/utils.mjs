@@ -64,31 +64,50 @@ export const mobileBottomBar = `
    
 </div>`;
 
+
+
+export const videoPlayerTemplate = `
+<div id="video-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button id="close-video" class="close-btn">&times;</button>
+        <div class="video-wrapper">
+            <iframe id="youtube-player" src="" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+        </div>
+    </div>
+</div>`;
+
+
+
+
+
+
+
+
 // please ignore the following code am still working on it is for details  and is not ready yet is still distubing me 
 // if can help me with suggestion
 
-export function movieDetailsTemplate(movie) {
+// export function movieDetailsTemplate(movie) {
     
-    const poster = movie.poster_path 
-        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
-        : 'https://via.placeholder.com/500x750?text=No+Image';
+//     const poster = movie.poster_path 
+//         ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
+//         : 'https://via.placeholder.com/500x750?text=No+Image';
 
-    return `
-        <div class="movie-details">
-            <div class="details-header">
-                <img src="${poster}" alt="${movie.title}" class="details-poster">
-                <div class="details-info">
-                    <h2>${movie.title}</h2>
-                    <p class="tagline"><em>${movie.tagline || ''}</em></p>
-                    <div class="stats">
-                        <span>⭐ ${movie.vote_average.toFixed(1)}</span>
-                        <span>⏱️ ${movie.runtime} min</span>
-                        <span>📅 ${movie.release_date.split('-')[0]}</span>
-                    </div>
-                    <p class="overview">${movie.overview}</p>
-                    <button class="add-watchlist-btn">Add to Watchlist</button>
-                </div>
-            </div>
-        </div>
-    `;
-}
+//     return `
+//         <div class="movie-details">
+//             <div class="details-header">
+//                 <img src="${poster}" alt="${movie.title}" class="details-poster">
+//                 <div class="details-info">
+//                     <h2>${movie.title}</h2>
+//                     <p class="tagline"><em>${movie.tagline || ''}</em></p>
+//                     <div class="stats">
+//                         <span>⭐ ${movie.vote_average.toFixed(1)}</span>
+//                         <span>⏱️ ${movie.runtime} min</span>
+//                         <span>📅 ${movie.release_date.split('-')[0]}</span>
+//                     </div>
+//                     <p class="overview">${movie.overview}</p>
+//                     <button class="add-watchlist-btn">Add to Watchlist</button>
+//                 </div>
+//             </div>
+//         </div>
+//     `;
+// }

@@ -1,10 +1,12 @@
-import { sidebarTemplate, mobileBottomBar } from './utils.mjs';
+import { sidebarTemplate, mobileBottomBar,videoPlayerTemplate } from './utils.mjs';
 import { getTrendingMovies, searchMovies, getImageUrl } from './movieService.mjs';
 
-
+import { getTrailerKey } from './movieService.mjs';
+// import { getTVShows, getTrailer } from './movieService.mjs';
 
 document.body.insertAdjacentHTML("afterbegin", sidebarTemplate);
 document.body.insertAdjacentHTML("beforeend", mobileBottomBar);
+document.body.insertAdjacentHTML("beforeend", videoPlayerTemplate);
 
 
 const movieGrid = document.querySelector('#trending-grid');
@@ -15,6 +17,8 @@ const searchBtn = document.querySelector('#search-btn');
 
 const menuBtn = document.querySelector('#menu-btn');
 const sidebar = document.querySelector('.sidebar');
+
+
 
 function displayMovies(movies) {
     if (!movieGrid) return; 
@@ -73,26 +77,44 @@ init();
 
 
 
+// 2. References
+const modal = document.getElementById('video-modal');
+const player = document.getElementById('youtube-player');
+const closeBtn = document.getElementById('close-video');
 
+// 3. THE FIXED FUNCTION
+async function playTrailer(id, type = 'movie') {
+    const key = await getTrailerKey(id, type);
 
-
-const menBtn = document.getElementById('menu-btn');
-
-menuBtn.addEventListener('click', () => {
-    // Check if the screen width is mobile size
-    if (window.innerWidth <= 768) {
-        // Redirect to your "More" page
-        window.location.href = '/more/index.html';
+    if (key) {
+     
+        player.src = `https://www.youtube.com/embed/${key}?autoplay=1&modestbranding=1&rel=0`;
+        
+        modal.classList.add('active'); // Make sure your CSS uses .active { display: flex; }
     } else {
-        // Optional: What happens on Desktop? 
-        // Maybe show a sidebar or an alert
-        alert("Menu is available on mobile only!");
+        alert("Sorry, no trailer found!");
+    }
+}
+
+
+document.addEventListener('click', (e) => {
+    const card = e.target.closest('.movie-card');
+    if (card) {
+        const id = card.dataset.id;
+        const type = card.dataset.type || 'movie';
+        playTrailer(id, type);
     }
 });
 
 
+const hideVideo = () => {
+    modal.classList.remove('active');
+    player.src = ""; 
+};
 
+if (closeBtn) closeBtn.addEventListener('click', hideVideo);
 
-
-
+window.addEventListener('click', (e) => {
+    if (e.target === modal) hideVideo();
+});
 
