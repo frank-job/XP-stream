@@ -11,15 +11,20 @@ async function loadAction() {
     // Genre ID 28 is for Action
     const movies = await getMoviesByGenre(28); 
 
-    actionGrid.innerHTML = movies.map(movie => `
-        <div class="movie-card" data-id="${movie.id}">
-            <img src="${getImageUrl(movie.poster_path)}" alt="${movie.title}" loading="lazy">
-            <div class="movie-info">
-                <h3>${movie.title}</h3>
-                <span class="rating">⭐ ${movie.vote_average.toFixed(1)}</span>
-            </div>
+actionGrid.innerHTML = movies.map(movie => `
+    <div class="movie-card" data-id="${movie.id}">
+        <img src="${getImageUrl(movie.poster_path)}" alt="${movie.title}" loading="lazy">
+        <div class="movie-info">
+            <h3>${movie.title}</h3>
+            <span class="rating">⭐ ${movie.vote_average.toFixed(1)}</span>
+            
+            <!-- Store the whole movie as a data attribute -->
+            <button class="add-to-watchlist" 
+                    data-movie='${JSON.stringify(movie).replace(/'/g, "&apos;")}'>
+                <i class="fa-solid fa-plus"></i> Add to Watchlist
+            </button>
         </div>
-    `).join('');
-}
+    </div>
+`).join('');}
 
 loadAction();

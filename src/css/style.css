@@ -69,6 +69,10 @@ main {
     filter: invert(1);
 }
 
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #444 #000; /* thumb color | track color */
+}
 
 .nav-group li a,
 .sidebar-footer a {
@@ -432,7 +436,9 @@ main {
         margin-bottom: 70px;
         padding: 15px;
     }
-
+    .section-title span {
+        font-size: 1.5rem;
+    }
 
     .hero-section {
         height: 50vh;
@@ -571,6 +577,14 @@ main {
         height: 40vh !important;
         border-radius: 0;
     }
+    .add-to-watchlist {
+        font-size: 5px;
+       
+       
+    }
+   
+        
+        
 
 
     
@@ -616,6 +630,15 @@ main {
         padding: 10px 0;
         z-index: 1000;
     }
+        .mobile-bottom-bar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+       
 }
 
 
@@ -663,8 +686,47 @@ main {
 .close-btn {
     position: absolute;
     top: -50px; right: 0;
-    font-size: 3rem;
+    font-size: 1rem;
     color: white;
     background: none; border: none;
     cursor: pointer;
+}
+.add-to-watchlist {
+    font-size: 8px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 10px;  
+    margin: auto;
+    /* margin-left: 50px; */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(126, 106, 106, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-watchlist:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+
+.watchlist {
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+  /* margin-top: 10px;   
+  margin-bottom: 20px; */
+  text-align: center;
+  color: var(--primary-color);
+  text-transform: capitalize;
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+.btn-text span {
+    font-size: 0.8rem;
+    font-weight: 600;
 }

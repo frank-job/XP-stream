@@ -17,6 +17,7 @@ async function loadComedy() {
             <div class="movie-info">
                 <h3>${movie.title}</h3>
                 <span class="rating">⭐ ${movie.vote_average.toFixed(1)}</span>
+                      <button class="add-to-watchlist" data-id="${movie.id}"><i class="fa-solid fa-plus"></i> Add to Watchlist</button>
             </div>
         </div>
     `).join('');

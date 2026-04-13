@@ -31,7 +31,7 @@ export const sidebarTemplate = `
 
         <div class="nav-group">
             <p class="nav-label nav-text">General</p>
-
+             <li><a href="/genres/watchlist/" id="watchlist-link"><img src="/images/download.png" alt="watchlist" class="sidebar-icon"> <span class="nav-text">Watchlist</span></a></li>
                 <li><a href="#"><img src="/images/download.png" alt="Downloads" class="sidebar-icon"> <span class="nav-text">Downloads</span></a></li>
                 <li><a href="#"><img src="/images/send .png" alt="Share" class="sidebar-icon"> <span class="nav-text">Share App</span></a></li>
                 <li><a href="#"><img src="/images/user.png" alt="Settings" class="sidebar-icon"> <span class="nav-text">Settings</span></a></li>
@@ -40,7 +40,7 @@ export const sidebarTemplate = `
     </div>
 
     <div class="sidebar-footer">
-        <a href="#"><img src="/images/user.png" alt="Profile" class="sidebar-icon"> <span class="nav-text">My Profile</span></a>
+        <a href="https://frank-job.github.io/proflei/"><img src="/images/user.png" alt="Profile" class="sidebar-icon"> <span class="nav-text">My Profile</span></a>
     </div>
 </aside>`;
 
@@ -49,7 +49,7 @@ export const sidebarTemplate = `
 export const mobileBottomBar = `
 <div class="mobile-bottom-bar">
     <!-- HOME: Resets the view to Trending -->
-    <a href="#" id="nav-home" class="nav-item active">
+    <a href="/" id="nav-home" class="nav-item active">
         <img src="/images/homebutton .png" alt="Home" class="sidebar-icon"> 
         <span class="nav-text">Home</span>
     </a>
@@ -60,7 +60,11 @@ export const mobileBottomBar = `
 </a>
 
 <a href="#"><img src="/images/user.png" alt="Settings" class="sidebar-icon"> <span class="nav-text">Settings</span></a>
-
+    
+<a href="/genres/watchlist/" id="watchlist-link" class="nav-item">
+    <img src="/images/download.png" alt="Watchlist" class="sidebar-icon"> 
+    <span class="nav-text">Watchlist</span>
+</a>
    
 </div>`;
 
@@ -75,7 +79,6 @@ export const videoPlayerTemplate = `
         </div>
     </div>
 </div>`;
-
 
 
 

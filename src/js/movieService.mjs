@@ -76,6 +76,3 @@ export async function getTrailerKey(id, type = 'movie') {
         return null;
     }
 }
-
-
-
