@@ -76,3 +76,19 @@ export async function getTrailerKey(id, type = 'movie') {
         return null;
     }
 }
+
+
+
+
+// src/js/movieService.mjs
+
+export async function getLocalCategories() {
+    try {
+        // Since it's in the public folder, we use this path
+        const response = await fetch('/data/categories.json');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error loading local JSON:", error);
+    }
+}

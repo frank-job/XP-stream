@@ -100,7 +100,7 @@ async function playTrailer(id, type = 'movie') {
      
         player.src = `https://www.youtube.com/embed/${key}?autoplay=1&modestbranding=1&rel=0`;
         
-        modal.classList.add('active'); // Make sure your CSS uses .active { display: flex; }
+        modal.classList.add('active');
     } else {
         alert("Sorry, no trailer found!");
     }
@@ -147,13 +147,13 @@ watchlistButtons.forEach(btn => {
 import { addToWatchlist } from './storage.mjs';
 
 document.addEventListener('click', (e) => {
-    // A. Check if they clicked the ADD button
+   
     const addBtn = e.target.closest('.add-to-watchlist');
     
     if (addBtn) {
-        e.stopPropagation(); // Stop the card details from opening
+        e.stopPropagation(); 
         
-        // Grab the movie data we hid in Step 1
+    
         const movieData = JSON.parse(addBtn.dataset.movie);
         
         // Save it!
@@ -161,11 +161,13 @@ document.addEventListener('click', (e) => {
         return; // Stop here
     }
 
-    // B. Check if they clicked the CARD (for details)
+
     const card = e.target.closest('.movie-card');
     if (card) {
         const movieId = card.dataset.id;
-        // Your function to open details/modal
+     
         loadPageDetails(movieId); 
     }
 });
+
+
