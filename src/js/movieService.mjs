@@ -1,5 +1,5 @@
 
-const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d'; 
+const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -22,7 +22,7 @@ export function getImageUrl(path) {
 export async function searchMovies(query) {
     const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d';
     const BASE_URL = 'https://api.themoviedb.org/3';
-    
+
     try {
         const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
         const data = await response.json();
@@ -47,7 +47,7 @@ export async function getMovieDetails(movieId) {
 export async function getMoviesByGenre(genreId) {
     const API_KEY = 'bd1612db1bc60d9688b7a9eb4ce5ea7d';
     const BASE_URL = 'https://api.themoviedb.org/3';
-    
+
     try {
         const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}`);
         const data = await response.json();
@@ -67,7 +67,7 @@ export async function getTrailerKey(id, type = 'movie') {
         const url = `${BASE_URL}/${type}/${id}/videos?api_key=${API_KEY}`;
         const response = await fetch(url);
         const data = await response.json();
-        
+
         // Find a Trailer on YouTube
         const trailer = data.results.find(vid => vid.type === 'Trailer' && vid.site === 'YouTube');
         return trailer ? trailer.key : null;
@@ -81,13 +81,12 @@ export async function getTrailerKey(id, type = 'movie') {
 
 
 // src/js/movieService.mjs
+import categoriesData from '../data/categories.json';
 
 export async function getLocalCategories() {
     try {
-        // Since it's in the public folder, we use this path
-        const response = await fetch('/data/categories.json');
-        const data = await response.json();
-        return data;
+        // Import JSON directly - no fetch needed
+        return categoriesData;
     } catch (error) {
         console.error("Error loading local JSON:", error);
     }

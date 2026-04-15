@@ -11,7 +11,7 @@ export default defineConfig({
   horror: resolve(__dirname, 'genres/horror/index.html'),
   comedy: resolve(__dirname, 'genres/comedy/index.html'),
   watchlist: resolve(__dirname, 'genres/watchlist/index.html'), // ADD THIS
-
+        about: resolve(__dirname, 'genres/about/index.html'),
       
       },
     },

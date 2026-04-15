@@ -35,7 +35,16 @@ export const sidebarTemplate = `
                 <li><a href="#"><img src="/images/download.png" alt="Downloads" class="sidebar-icon"> <span class="nav-text">Downloads</span></a></li>
                 <li><a href="#"><img src="/images/send .png" alt="Share" class="sidebar-icon"> <span class="nav-text">Share App</span></a></li>
                 <li><a href="#"><img src="/images/user.png" alt="Settings" class="sidebar-icon"> <span class="nav-text">Settings</span></a></li>
+               
+<li>
+    <a href="/genres/about/">
+        <img src="/images/user.png" class="sidebar-icon"> 
+        <span class="nav-text">About App</span>
+    </a>
+</li>
             </ul>
+            <li>
+   
         </div>
     </div>
 
@@ -65,6 +74,13 @@ export const mobileBottomBar = `
     <img src="/images/download.png" alt="Watchlist" class="sidebar-icon"> 
     <span class="nav-text">Watchlist</span>
 </a>
+
+
+    <a href="/genres/about/">
+        <img src="/images/user.png" class="sidebar-icon"> 
+        <span class="nav-text">About App</span>
+    </a>
+
    
 </div>`;
 
@@ -79,6 +95,7 @@ export const videoPlayerTemplate = `
         </div>
     </div>
 </div>`;
+
 
 
 

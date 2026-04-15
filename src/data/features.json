@@ -1,0 +1,56 @@
+[
+    {
+        "feature_title": "Trending Movies",
+        "category": "Discovery",
+        "description": "Browse the latest trending movies from TMDB API updated weekly.",
+        "icon_path": "/images/action.png",
+        "tech_used": "JavaScript ES6, Fetch API, TMDB API",
+        "difficulty_score": 60,
+        "benefit_to_user": "Stay up-to-date with what's popular right now"
+    },
+    {
+        "feature_title": "Smart Search",
+        "category": "Navigation",
+        "description": "Search for any movie with real-time results powered by TMDB.",
+        "icon_path": "/images/action-movie.png",
+        "tech_used": "Async/Await, API Integration",
+        "difficulty_score": 50,
+        "benefit_to_user": "Find exactly what you want to watch instantly"
+    },
+    {
+        "feature_title": "Genre Categories",
+        "category": "Organization",
+        "description": "Browse movies by genre with locally stored category data.",
+        "icon_path": "/images/action.png",
+        "tech_used": "JSON Data, Vite Import, Dynamic HTML",
+        "difficulty_score": 40,
+        "benefit_to_user": "Easily explore movies by your favorite genres"
+    },
+    {
+        "feature_title": "Watchlist Management",
+        "category": "Personalization",
+        "description": "Save and manage your personal watchlist with local storage.",
+        "icon_path": "/images/ghost.png",
+        "tech_used": "LocalStorage API, JSON Serialization",
+        "difficulty_score": 55,
+        "benefit_to_user": "Build and keep track of movies you want to see"
+    },
+    {
+        "feature_title": "Trailer Playback",
+        "category": "Entertainment",
+        "description": "Watch official trailers directly from YouTube.",
+        "icon_path": "/images/action.png",
+        "tech_used": "YouTube IFrame API, Video Handling",
+        "difficulty_score": 45,
+        "benefit_to_user": "Preview movies before deciding to watch"
+    },
+    {
+        "feature_title": "Responsive Design",
+        "category": "User Experience",
+        "description": "Seamless experience across mobile, tablet, and desktop.",
+        "icon_path": "/images/action.png",
+        "tech_used": "CSS Media Queries, Flexbox, Modern CSS",
+        "difficulty_score": 65,
+        "benefit_to_user": "Enjoy XP-Stream on any device"
+    }
+]

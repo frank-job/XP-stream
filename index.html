@@ -18,23 +18,23 @@
     <link rel="icon" href="/src/images/favicon.ico">
 
     <meta name="description"
-      content="XP‑Stream is your ultimate movie streaming hub, offering the latest films, timeless classics, and binge‑worthy series—all in one place. Enjoy seamless streaming, curated collections, and an immersive entertainment experience.">
+        content="XP‑Stream is your ultimate movie streaming hub, offering the latest films, timeless classics, and binge‑worthy series—all in one place. Enjoy seamless streaming, curated collections, and an immersive entertainment experience.">
 
     <title>XP-Stream | Jinja's Movie Discovery App</title>
     <meta name="title" content="XP-Stream | Jinja's Movie Discovery App" />
     <meta name="description"
         content="Explore the latest trending movies, search for your favorites, and create your ultimate watchlist with XP-Stream." />
 
-   
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://github.com/frank-job/XP-stream" />
-   
+
     <meta property="og:title" content="XP-Stream | Jinja's Movie Discovery App" />
     <meta property="og:description"
         content="Discover, explore, and save the best movies across the globe. Modern cinematic experience powered by TMDb." />
     <meta property="og:image" content="https://github.com/frank-job/XP-stream/src/assets/social-preview.jpg" />
 
-   
+
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://github.com/frank-job/XP-stream" />
     <meta property="twitter:title" content="XP-Stream | Jinja's Movie Discovery App" />
@@ -44,19 +44,19 @@
 </head>
 
 <body>
-   
-   
+
+
 
     <main>
 
         <section class="hero-section">
-          
+
             <img src="/public/images/movie banners.jpg" alt="Featured Movie" class="hero-img">
 
-           
+
             <div class="hero-overlay"></div>
 
-        
+
             <div class="hero-content">
                 <h1>Watch the Best Movies on <span>XP-Stream</span></h1>
                 <div class="search-box">
@@ -66,7 +66,12 @@
             </div>
         </section>
 
-            
+
+        <section class="movie-section">
+            <h2>Browse Categories</h2>
+            <div class="movie-grid" id="categories-grid"></div>
+        </section>
+
         <section class="movie-section">
 
             <h2>Trending Now</h2>
@@ -75,16 +80,16 @@
         </section>
 
         <div id="trailer-modal" class="modal-overlay">
-    <div class="modal-content">
-        <button class="close-modal" id="close-modal">&times;</button>
-        <div class="video-container">
-            <iframe id="trailer-video" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="modal-content">
+                <button class="close-modal" id="close-modal">&times;</button>
+                <div class="video-container">
+                    <iframe id="trailer-video" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-        
 
-        
+
+
 
     </main>
 

@@ -1,0 +1,35 @@
+[
+    {
+        "id": 27,
+        "name": "Horror",
+        "slug": "horror",
+        "description": "Get ready for thrills, chills, and jumpscares.",
+        "icon": "/images/ghost.png",
+        "featured_movie": "Smile 2",
+        "color_accent": "#E50914",
+        "is_active": true,
+        "total_count": "1,200+ Titles"
+    },
+    {
+        "id": 35,
+        "name": "Comedy",
+        "slug": "comedy",
+        "description": "The best medicine is a good laugh. Explore funny hits.",
+        "icon": "/images/action-movie.png",
+        "featured_movie": "Deadpool & Wolverine",
+        "color_accent": "#ffcc00",
+        "is_active": true,
+        "total_count": "2,500+ Titles"
+    },
+    {
+        "id": 28,
+        "name": "Action",
+        "slug": "action",
+        "description": "High-octane excitement and legendary stunts.",
+        "icon": "/images/action.png",
+        "featured_movie": "Gladiator II",
+        "color_accent": "#007bff",
+        "is_active": true,
+        "total_count": "3,100+ Titles"
+    }
+]

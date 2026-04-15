@@ -1,0 +1,38 @@
+[
+  {
+    "id": "f1",
+    "feature_title": "Real-time Movie Search",
+    "description": "Instantly search through thousands of movies using the TMDb global database.",
+    "tech_used": "Asynchronous JavaScript (Fetch API)",
+    "difficulty_score": 85,
+    "icon_path": "/images/video.png",
+    "is_fully_functional": true,
+    "category": "API Integration",
+    "benefit_to_user": "Saves time finding preferred content.",
+    "learning_outcome": "Mastered handling complex JSON responses."
+  },
+  {
+    "id": "f2",
+    "feature_title": "Local Watchlist Storage",
+    "description": "Save your favorite movies to your device so they are there even after a refresh.",
+    "tech_used": "Web Storage API (LocalStorage)",
+    "difficulty_score": 70,
+    "icon_path": "/images/user.png",
+    "is_fully_functional": true,
+    "category": "Data Persistence",
+    "benefit_to_user": "Personalized experience across sessions.",
+    "learning_outcome": "Learned JSON stringify and parse methods."
+  },
+  {
+    "id": "f3",
+    "feature_title": "Responsive Cinematic UI",
+    "description": "A dark-themed, glassmorphism design that works perfectly on phones and PCs.",
+    "tech_used": "Advanced CSS (Grid, Flexbox, Keyframes)",
+    "difficulty_score": 90,
+    "icon_path": "/images/home.png",
+    "is_fully_functional": true,
+    "category": "UI/UX Design",
+    "benefit_to_user": "Professional look and easy mobile navigation.",
+    "learning_outcome": "Applied mobile-first design principles."
+  }
+]
